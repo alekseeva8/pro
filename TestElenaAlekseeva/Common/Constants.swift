@@ -11,6 +11,4 @@ import Foundation
 enum Constants {
 
     static let urlString = "http://www.json-generator.com/api/json/get/clyWAUbaxu?indent=2"
-    
-        //static let urlString = "https://jsonplaceholder.typicode.com/users"
 }

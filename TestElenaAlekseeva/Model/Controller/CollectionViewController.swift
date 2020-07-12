@@ -42,6 +42,9 @@ class CollectionViewController: UIViewController {
         collectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: CollectionViewCell.reuseID)
         
         getData()
+        
+        ageSegmentedControl.selectedSegmentTintColor = .lightGray
+        genderSegmentedControl.selectedSegmentTintColor = .lightGray
     }
     
     private func getData() {
@@ -55,12 +58,20 @@ class CollectionViewController: UIViewController {
     }
     
     @IBAction func reloadButtonTapped(_ sender: Any) {
+        
         activityIndicator.startAnimating()
+        ageSegmentedControl.selectedSegmentTintColor = .lightGray
+        genderSegmentedControl.selectedSegmentTintColor = .lightGray
+        ageSegmentedControl.selectedSegmentIndex = 0
+        genderSegmentedControl.selectedSegmentIndex = 0
         people = [Person]()
         getData()    
     }
     
     @IBAction func ageSegmentedControlTapped(_ sender: UISegmentedControl) {
+        ageSegmentedControl.selectedSegmentTintColor = .white
+        genderSegmentedControl.selectedSegmentTintColor = .lightGray
+        
         let segmentIndex = sender.selectedSegmentIndex
         switch segmentIndex {
         case 0: 
@@ -78,7 +89,8 @@ class CollectionViewController: UIViewController {
     }
     
     @IBAction func genderSegmentedControlTapped(_ sender: UISegmentedControl) {
-        
+        genderSegmentedControl.selectedSegmentTintColor = .white
+        ageSegmentedControl.selectedSegmentTintColor = .lightGray
         let segmentIndex = sender.selectedSegmentIndex
         switch segmentIndex {
         case 0: 
