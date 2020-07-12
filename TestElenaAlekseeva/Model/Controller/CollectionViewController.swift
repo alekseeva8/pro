@@ -139,8 +139,8 @@ extension CollectionViewController: UICollectionViewDataSource {
         cell.layer.cornerRadius = 20
         
         cell.nameLabel.text = people[indexPath.row].name
+        cell.genderLabel.text = "\(people[indexPath.row].age) years"
         
-        cell.genderLabel.text = "30 years"
         cell.imageView.image = UIImage(named: "female")
         switch people[indexPath.row].gender {
         case "male":
